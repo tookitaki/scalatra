@@ -1,7 +1,7 @@
 package org.scalatra.swagger.reflect
 
 import scala.annotation.tailrec
-import org.json4s.scalap.scalasig._
+import com.tt.json4s.scalap.scalasig._
 
 import scala.collection.compat.immutable._
 

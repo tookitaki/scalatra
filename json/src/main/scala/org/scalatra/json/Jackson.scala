@@ -4,7 +4,7 @@ package json
 import java.io.Writer
 
 import com.fasterxml.jackson.databind.DeserializationFeature
-import org.json4s._
+import com.tt.json4s._
 import org.scalatra.util.RicherString._
 
 trait JacksonJsonSupport extends JsonSupport[JValue] with JacksonJsonOutput with JValueResult {

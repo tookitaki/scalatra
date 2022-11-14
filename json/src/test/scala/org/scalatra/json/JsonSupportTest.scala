@@ -1,7 +1,7 @@
 package org.scalatra
 package json
 
-import org.json4s._
+import com.tt.json4s._
 import org.scalatra.test.scalatest.ScalatraFunSuite
 
 class JsonSupportTest extends json.JsonSupportTestBase {
@@ -14,13 +14,13 @@ class JsonSupportTest extends json.JsonSupportTestBase {
     override protected lazy val jsonVulnerabilityGuard: Boolean = true
     override val jsonpCallbackParameterNames: Iterable[String] = Some("callback")
     get("/json") {
-      import org.json4s.JsonDSL._
+      import com.tt.json4s.JsonDSL._
       ("k1" -> "v1") ~
         ("k2" -> "v2")
     }
 
     get("/jsonp") {
-      import org.json4s.JsonDSL._
+      import com.tt.json4s.JsonDSL._
       ("k1" -> "v1") ~
         ("k2" -> "v2")
     }
@@ -32,23 +32,23 @@ class JsonSupportTest extends json.JsonSupportTestBase {
 class JsonSupportTestServlet extends ScalatraServlet with NativeJsonSupport {
 
   get("/json") {
-    import org.json4s.JsonDSL._
+    import com.tt.json4s.JsonDSL._
     ("k1" -> "v1") ~
       ("k2" -> "v2")
   }
 
   get("/json-in-action-result") {
-    import org.json4s.JsonDSL._
+    import com.tt.json4s.JsonDSL._
     BadRequest(("k1" -> "v1") ~ ("k2" -> "v2"))
   }
 
   get("/json-result") {
-    import org.json4s.JsonDSL._
+    import com.tt.json4s.JsonDSL._
     JsonResult(("k1" -> "v1"))
   }
 
   get("/json-result-in-action-result") {
-    import org.json4s.JsonDSL._
+    import com.tt.json4s.JsonDSL._
     BadRequest(JsonResult(("error" -> "message")))
   }
 
@@ -66,7 +66,7 @@ class JsonPTestServlet extends ScalatraServlet with NativeJsonSupport {
   override def jsonpCallbackParameterNames = Some("callback")
 
   get("/jsonp") {
-    import org.json4s.JsonDSL._
+    import com.tt.json4s.JsonDSL._
     ("k1" -> "v1") ~
       ("k2" -> "v2")
   }

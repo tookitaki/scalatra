@@ -4,7 +4,7 @@ package json
 import java.text.{ DateFormat, SimpleDateFormat }
 import java.util.Date
 
-import org.json4s._
+import com.tt.json4s._
 import org.scalatra.util.conversion._
 
 trait JsonImplicitConversions extends TypeConverterSupport {

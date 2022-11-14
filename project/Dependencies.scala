@@ -17,10 +17,10 @@ object Dependencies {
   lazy val jettyServlet             =  "org.eclipse.jetty"       %  "jetty-servlet"              % jettyVersion
   lazy val jettyWebsocket           =  "org.eclipse.jetty.websocket" %"websocket-server"         % jettyVersion
   lazy val jettyWebapp              =  "org.eclipse.jetty"       %  "jetty-webapp"               % jettyVersion
-  lazy val json4sCore               =  "org.json4s"              %% "json4s-core"                % json4sVersion
-  lazy val json4sJackson            =  "org.json4s"              %% "json4s-jackson"             % json4sVersion
-  lazy val json4sNative             =  "org.json4s"              %% "json4s-native"              % json4sVersion
-  lazy val json4sXml                =  "org.json4s"              %% "json4s-xml"                 % json4sVersion
+  lazy val json4sCore               =  "com.tt.json4s"              %% "json4s-core"                % json4sVersion
+  lazy val json4sJackson            =  "com.tt.json4s"              %% "json4s-jackson"             % json4sVersion
+  lazy val json4sNative             =  "com.tt.json4s"              %% "json4s-native"              % json4sVersion
+  lazy val json4sXml                =  "com.tt.json4s"              %% "json4s-xml"                 % json4sVersion
   lazy val junit                    =  "junit"                   %  "junit"                      % "4.13.2"
   lazy val scalatestJunit           =  "org.scalatestplus"       %% "junit-4-13"                 % "3.2.13.0"
   lazy val jUniversalChardet        =  "com.github.albfernandez" %  "juniversalchardet"          % "2.4.0"

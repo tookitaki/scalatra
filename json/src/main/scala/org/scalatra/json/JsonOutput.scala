@@ -3,8 +3,8 @@ package json
 
 import java.io.Writer
 
-import org.json4s.Xml._
-import org.json4s._
+import com.tt.json4s.Xml._
+import com.tt.json4s._
 
 import scala.io.Codec
 import scala.xml.XML
