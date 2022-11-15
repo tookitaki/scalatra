@@ -1,6 +1,6 @@
-## Scalatra ![Scala CI](https://github.com/scalatra/scalatra/workflows/build/badge.svg?branch=2.7.x)
+## Scalatra 
 
-[![Join the chat at https://gitter.im/scalatra/scalatra](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/scalatra/scalatra?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+*This is a custom release for Tookitaki to resolve JSON4S conflicts with Spark and Scalatra versions*
 
 Scalatra is a tiny, [Sinatra](http://www.sinatrarb.com/)-like web framework for
 [Scala](http://www.scala-lang.org/).

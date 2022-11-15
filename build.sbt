@@ -5,8 +5,14 @@ import Dependencies._
 
 val unusedOptions = Seq("-Ywarn-unused:imports")
 
+lazy val tookitaki = "Tookitaki"
+  .at("http://tookitaki-artifacts.tookitaki.com/artifactory/tookitaki-releases")
+  .withAllowInsecureProtocol(true)
+lazy val allResolvers: Seq[Resolver] = Seq(tookitaki)
+
 lazy val scalatraSettings = Seq(
   organization := "org.scalatra",
+  resolvers ++= allResolvers,
   Test / fork := true,
   Test / baseDirectory := (ThisBuild / baseDirectory).value,
   crossScalaVersions := Seq("2.12.16", "2.13.8", "3.1.3"),
@@ -51,7 +57,7 @@ lazy val scalatraSettings = Seq(
     "-language:existentials"
   ),
   manifestSetting,
-) ++ mavenCentralFrouFrou ++ Seq(Compile, Test).flatMap(c =>
+) ++ publishOpts ++ Seq(Compile, Test).flatMap(c =>
   c / console / scalacOptions --= unusedOptions
 )
 
@@ -272,93 +278,18 @@ lazy val manifestSetting = packageOptions += {
   )
 }
 
-// Things we care about primarily because Maven Central demands them
-lazy val mavenCentralFrouFrou = Seq(
-  homepage := Some(new URL("http://www.scalatra.org/")),
-  startYear := Some(2009),
-  licenses := Seq(("BSD", new URL("http://github.com/scalatra/scalatra/raw/HEAD/LICENSE"))),
-  pomExtra := pomExtra.value ++ Group(
-    <scm>
-      <url>http://github.com/scalatra/scalatra</url>
-      <connection>scm:git:git://github.com/scalatra/scalatra.git</connection>
-    </scm>
-    <developers>
-      <developer>
-        <id>riffraff</id>
-        <name>Gabriele Renzi</name>
-        <url>http://www.riffraff.info</url>
-      </developer>
-      <developer>
-        <id>alandipert</id>
-        <name>Alan Dipert</name>
-        <url>http://alan.dipert.org</url>
-      </developer>
-      <developer>
-        <id>rossabaker</id>
-        <name>Ross A. Baker</name>
-        <url>http://www.rossabaker.com/</url>
-      </developer>
-      <developer>
-        <id>chirino</id>
-        <name>Hiram Chirino</name>
-        <url>http://hiramchirino.com/blog/</url>
-      </developer>
-      <developer>
-        <id>casualjim</id>
-        <name>Ivan Porto Carrero</name>
-        <url>http://flanders.co.nz/</url>
-      </developer>
-      <developer>
-        <id>jlarmstrong</id>
-        <name>Jared Armstrong</name>
-        <url>http://www.jaredarmstrong.name/</url>
-      </developer>
-      <developer>
-        <id>mnylen</id>
-        <name>Mikko Nylen</name>
-        <url>https://github.com/mnylen/</url>
-      </developer>
-      <developer>
-        <id>dozed</id>
-        <name>Stefan Ollinger</name>
-        <url>http://github.com/dozed/</url>
-      </developer>
-      <developer>
-        <id>sdb</id>
-        <name>Stefan De Boey</name>
-        <url>http://github.com/sdb/</url>
-      </developer>
-      <developer>
-        <id>ymasory</id>
-        <name>Yuvi Masory</name>
-        <url>http://github.com/ymasory/</url>
-      </developer>
-      <developer>
-        <id>jfarcand</id>
-        <name>Jean-François Arcand</name>
-        <url>http://github.com/jfarcand/</url>
-      </developer>
-      <developer>
-        <id>ceedubs</id>
-        <name>Cody Alen</name>
-        <url>http://github.com/ceedubs/</url>
-      </developer>
-      <developer>
-        <id>BowlingX</id>
-        <name>David Heidrich</name>
-        <url>http://github.com/BowlingX/</url>
-      </developer>
-      <developer>
-        <id>ayush</id>
-        <name>Ayush Gupta</name>
-        <url>hhttps://github.com/ayush</url>
-      </developer>
-      <developer>
-        <id>seratch</id>
-        <name>Kazuhiro Sera</name>
-        <url>hhttps://github.com/seratch</url>
-      </developer>
-    </developers>
+
+lazy val publishOpts = Seq(
+  // settings
+  credentials += Credentials(Path.userHome / ".ivy2" / "credentials"),
+  publishConfiguration := publishConfiguration.value.withOverwrite(true),
+  publishMavenStyle := true,
+  Test / publishArtifact := false,
+  pomIncludeRepository := { _ => false },
+  ThisBuild / publishTo := Some(
+    "Artifactory Realm"
+      .at("http://tookitaki-artifacts.tookitaki.com/artifactory/tookitaki-releases")
+      .withAllowInsecureProtocol(true)
   )
 )
 
