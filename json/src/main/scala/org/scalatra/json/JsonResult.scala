@@ -1,6 +1,6 @@
 package org.scalatra.json
 
-import com.tt.json4s.JValue
+import com.tookitaki.json4s.JValue
 
 case class JsonResult(value: JValue)
 

@@ -1,7 +1,7 @@
 package org.scalatra
 package json
 
-import com.tt.json4s._
+import com.tookitaki.json4s._
 import org.scalatra.util.RicherString._
 import org.scalatra.util.ValueReader
 

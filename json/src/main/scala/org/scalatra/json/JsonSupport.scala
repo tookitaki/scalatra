@@ -4,8 +4,8 @@ package json
 import jakarta.servlet.http.HttpServletRequest
 import javax.xml.XMLConstants
 
-import com.tt.json4s.Xml._
-import com.tt.json4s._
+import com.tookitaki.json4s.Xml._
+import com.tookitaki.json4s._
 import org.scalatra.util.RicherString._
 import org.slf4j.LoggerFactory
 

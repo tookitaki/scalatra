@@ -17,10 +17,10 @@ object Dependencies {
   lazy val jettyServlet             =  "org.eclipse.jetty"       %  "jetty-servlet"              % jettyVersion
   lazy val jettyWebsocket           =  "org.eclipse.jetty.websocket" %"websocket-server"         % jettyVersion
   lazy val jettyWebapp              =  "org.eclipse.jetty"       %  "jetty-webapp"               % jettyVersion
-  lazy val json4sCore               =  "com.tt.json4s"              %% "json4s-core"                % json4sVersion
-  lazy val json4sJackson            =  "com.tt.json4s"              %% "json4s-jackson"             % json4sVersion
-  lazy val json4sNative             =  "com.tt.json4s"              %% "json4s-native"              % json4sVersion
-  lazy val json4sXml                =  "com.tt.json4s"              %% "json4s-xml"                 % json4sVersion
+  lazy val json4sCore               =  "com.tookitaki.json4s"    %% "json4s-core"                % json4sVersion
+  lazy val json4sJackson            =  "com.tookitaki.json4s"    %% "json4s-jackson"             % json4sVersion
+  lazy val json4sNative             =  "com.tookitaki.json4s"    %% "json4s-native"              % json4sVersion
+  lazy val json4sXml                =  "com.tookitaki.json4s"    %% "json4s-xml"                 % json4sVersion
   lazy val junit                    =  "junit"                   %  "junit"                      % "4.13.2"
   lazy val scalatestJunit           =  "org.scalatestplus"       %% "junit-4-13"                 % "3.2.13.0"
   lazy val jUniversalChardet        =  "com.github.albfernandez" %  "juniversalchardet"          % "2.4.0"
@@ -51,7 +51,7 @@ object Dependencies {
   private val akkaVersion             = "2.6.19"
   private val httpcomponentsVersion   = "4.5.6"
   private val jettyVersion            = "11.0.11"
-  private val json4sVersion           = "4.0.5"
+  private val json4sVersion           = "4.0.5-TT"
   private val specs2Version           = "4.16.1"
   private val scalatestVersion        = "3.2.13"
 }

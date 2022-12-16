@@ -3,7 +3,7 @@ package json
 
 import java.io.Writer
 
-import com.tt.json4s._
+import com.tookitaki.json4s._
 import native._
 import org.scalatra.util.RicherString._
 
