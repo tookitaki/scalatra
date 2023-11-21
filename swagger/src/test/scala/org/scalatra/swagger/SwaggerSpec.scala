@@ -4,9 +4,9 @@ package swagger
 import java.net.ServerSocket
 import java.time.OffsetDateTime
 
-import org.json4s._
-import org.json4s.jackson.JsonMethods
-import org.json4s.native.JsonParser
+import com.tookitaki.json4s._
+import com.tookitaki.json4s.jackson.JsonMethods
+import com.tookitaki.json4s.native.JsonParser
 import org.scalatra.json.NativeJsonSupport
 import org.scalatra.swagger.annotations._
 import org.scalatra.test.specs2.ScalatraSpec

@@ -1,8 +1,8 @@
 package org.scalatra
 package json
 
-import org.json4s._
-import org.json4s.jackson.JsonMethods.parse
+import com.tookitaki.json4s._
+import com.tookitaki.json4s.jackson.JsonMethods.parse
 import org.scalatra.test.specs2.MutableScalatraSpec
 
 case class NamedThing(name: String = "tom")

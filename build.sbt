@@ -1,5 +1,6 @@
 import scala.xml._
 import Dependencies._
+import CustomResolver._
 
 val unusedOptions = Seq("-Ywarn-unused:imports")
 
@@ -86,6 +87,7 @@ lazy val scalatraSettings = Seq(
     "-language:implicitConversions",
     "-language:existentials"
   ),
+  resolvers ++= CustomResolver.all,
   manifestSetting,
 ) ++ mavenCentralFrouFrou ++ Seq(Compile, Test).flatMap(c =>
   c / console / scalacOptions --= unusedOptions

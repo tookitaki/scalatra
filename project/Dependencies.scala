@@ -11,10 +11,10 @@ object Dependencies {
   lazy val jettyWebappJavax         =  "org.eclipse.jetty"       %  "jetty-webapp"               % "10.0.15"
   lazy val jettyServletJakarta      =  "org.eclipse.jetty"       %  "jetty-servlet"              % "11.0.15"
   lazy val jettyWebappJakarta       =  "org.eclipse.jetty"       %  "jetty-webapp"               % "11.0.15"
-  lazy val json4sCore               =  "org.json4s"              %% "json4s-core"                % json4sVersion
-  lazy val json4sJackson            =  "org.json4s"              %% "json4s-jackson"             % json4sVersion
-  lazy val json4sNative             =  "org.json4s"              %% "json4s-native"              % json4sVersion
-  lazy val json4sXml                =  "org.json4s"              %% "json4s-xml"                 % json4sVersion
+  lazy val json4sCore               =  "com.tookitaki.json4s"    %% "json4s-core"                % json4sVersion
+  lazy val json4sJackson            =  "com.tookitaki.json4s"    %% "json4s-jackson"             % json4sVersion
+  lazy val json4sXml                =  "com.tookitaki.json4s"    %% "json4s-xml"                 % json4sVersion
+  lazy val json4sNative             =  "com.tookitaki.json4s"    %% "json4s-native"              % json4sVersion
   lazy val scalatestJunit           =  "org.scalatestplus"       %% "junit-4-13"                 % "3.2.16.0"
   lazy val jUniversalChardet        =  "com.github.albfernandez" %  "juniversalchardet"          % "2.4.0"
   lazy val logbackClassic           =  "ch.qos.logback"          %  "logback-classic"            % "1.4.8"
@@ -44,7 +44,7 @@ object Dependencies {
   lazy val googleGuava              =  "com.google.guava"        %  "guava"                      % "32.1.1-jre"
   lazy val twirlApi                 =  "com.typesafe.play"       %% "twirl-api"                  % "1.6.0-RC4"
 
-  private val json4sVersion           = "4.0.6"
+  private val json4sVersion           = "4.0.5-TT"
   private val specs2Version           = "4.20.0"
   private val scalatestVersion        = "3.2.16"
 }

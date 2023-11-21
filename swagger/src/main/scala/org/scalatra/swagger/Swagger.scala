@@ -5,7 +5,7 @@ import java.lang.reflect.Field
 import java.util.concurrent.ConcurrentHashMap
 import java.util.{ Date => JDate }
 
-import org.json4s.JsonAST.JValue
+import com.tookitaki.json4s.JsonAST.JValue
 import org.scalatra.swagger.reflect._
 import org.scalatra.swagger.runtime.annotations.{ ApiModel, ApiModelProperty }
 import org.slf4j.LoggerFactory

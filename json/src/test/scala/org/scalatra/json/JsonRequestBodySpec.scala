@@ -1,7 +1,7 @@
 package org.scalatra
 package json
 
-import org.json4s._
+import com.tookitaki.json4s._
 import native._
 import org.scalatra.test.specs2.MutableScalatraSpec
 
