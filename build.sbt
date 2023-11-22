@@ -1,6 +1,6 @@
 import scala.xml._
 import Dependencies._
-import CustomResolver._
+import CustomResolvers._
 
 val unusedOptions = Seq("-Ywarn-unused:imports")
 
@@ -19,8 +19,8 @@ val scala3migaration = Def.settings(
   }
 )
 
-def Scala213 = "2.13.11"
-val scalaVersions = Seq("2.12.18", Scala213, "3.3.0")
+def Scala213 = "2.12.18"
+val scalaVersions = Seq("2.12.18")
 
 lazy val scalatraSettings = Seq(
   organization := "org.scalatra",
@@ -74,8 +74,8 @@ lazy val scalatraSettings = Seq(
     }
   },
   javacOptions ++= Seq(
-    "-source", "11",
-    "-target", "11",
+    "-source", "8",
+    "-target", "8",
   ),
   scalacOptions ++= Seq(
     "-unchecked",
@@ -87,7 +87,7 @@ lazy val scalatraSettings = Seq(
     "-language:implicitConversions",
     "-language:existentials"
   ),
-  resolvers ++= CustomResolver.all,
+  resolvers ++= CustomResolvers.all,
   manifestSetting,
 ) ++ mavenCentralFrouFrou ++ Seq(Compile, Test).flatMap(c =>
   c / console / scalacOptions --= unusedOptions
