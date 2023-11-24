@@ -1,6 +1,5 @@
 import scala.xml._
 import Dependencies._
-import CustomResolvers._
 
 val unusedOptions = Seq("-Ywarn-unused:imports")
 
@@ -19,7 +18,9 @@ val scala3migaration = Def.settings(
   }
 )
 
-def Scala213 = "2.12.18"
+def Scala213 = "2.13.11"
+crossScalaVersions := Seq("2.12.18", Scala213)
+scalaVersion := crossScalaVersions.value.head
 val scalaVersions = Seq("2.12.18")
 
 lazy val scalatraSettings = Seq(
@@ -65,7 +66,7 @@ lazy val scalatraSettings = Seq(
     CrossVersion.partialVersion(scalaVersion.value) match {
       case Some((2, _)) =>
         unusedOptions ++ Seq(
-          "-release:8",
+          "-release",
           "-Xlint",
           "-Xcheckinit",
         )
@@ -74,8 +75,8 @@ lazy val scalatraSettings = Seq(
     }
   },
   javacOptions ++= Seq(
-    "-source", "8",
-    "-target", "8",
+    "-source", "11",
+    "-target", "11",
   ),
   scalacOptions ++= Seq(
     "-unchecked",
@@ -94,7 +95,6 @@ lazy val scalatraSettings = Seq(
 )
 
 scalatraSettings
-scalaVersion := Scala213
 name := "scalatra-unidoc"
 artifacts := Classpaths.artifactDefs(Seq(Compile / packageDoc, Compile / makePom)).value
 packagedArtifacts := Classpaths.packaged(Seq(Compile / packageDoc, Compile / makePom)).value
