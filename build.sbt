@@ -73,8 +73,8 @@ lazy val scalatraSettings = Seq(
     }
   },
   javacOptions ++= Seq(
-    "-source", "11",
-    "-target", "11",
+    "-source", "8",
+    "-target", "8",
   ),
   scalacOptions ++= Seq(
     "-unchecked",
