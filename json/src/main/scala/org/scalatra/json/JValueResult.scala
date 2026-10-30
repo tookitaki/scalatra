@@ -3,7 +3,7 @@ package json
 
 import java.io.File
 
-import com.tt.json4s._
+import com.tookitaki.shaded.org.json4s._
 
 import scala.xml.NodeSeq
 
