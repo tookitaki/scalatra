@@ -51,7 +51,7 @@ object Dependencies {
   private val akkaVersion             = "2.6.19"
   private val httpcomponentsVersion   = "4.5.6"
   private val jettyVersion            = "11.0.11"
-  private val json4sVersion           = "4.0.7" // Tookitaki shaded build
+  private val json4sVersion           = "4.0.7-TT" // Tookitaki shaded build
   private val specs2Version           = "4.16.1"
   private val scalatestVersion        = "3.2.13"
 }
